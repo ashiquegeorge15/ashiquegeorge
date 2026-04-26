@@ -506,6 +506,107 @@
     margin-top: 0.5rem;
   }
   .proj-link:hover { color: var(--cyan); border-color: var(--cyan); }
+
+  /* PROJECTS */
+  #projects { background: var(--navy2); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* RESPONSIVE ENHANCEMENTS */
+  @media (max-width: 1024px) {
+    nav { padding: 1rem 2rem; }
+    #hero { padding: 7.5rem 2rem 4rem; }
+    section { padding: 5rem 2rem; }
+    #stats { padding: 4rem 2rem; }
+    footer { padding: 1.5rem 2rem; }
+    .hero-layout { gap: 2.5rem; }
+    .hero-photo { width: 180px; height: 180px; }
+  }
+
+  @media (max-width: 768px) {
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+    nav { padding: 0.9rem 1rem; }
+    .nav-logo { font-size: 1rem; }
+    .nav-links { display: none; }
+    #hero {
+      min-height: auto;
+      padding: 6.5rem 1rem 3rem;
+    }
+    .hero-layout {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 1.75rem;
+    }
+    .hero-content { max-width: 100%; }
+    .hero-name { line-height: 1; }
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+    .hero-ctas { width: 100%; }
+    .hero-ctas .btn-primary,
+    .hero-ctas .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+    .hero-photo { width: 140px; height: 140px; }
+    .hero-scroll { display: none; }
+    .hero-orb {
+      width: 360px;
+      height: 360px;
+      right: -160px;
+      top: -120px;
+    }
+    .hero-orb2 {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      bottom: 20px;
+    }
+    section { padding: 3.75rem 1rem; }
+    .section-title { margin-bottom: 2rem; }
+    #stats { padding: 3rem 1rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0.8rem;
+    }
+    .stat-item:last-child { border-bottom: none; }
+    .exp-card { padding: 1.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .contact-links .btn-primary,
+    .contact-links .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+    footer {
+      padding: 1.25rem 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-tag { font-size: 0.62rem; }
+    .hero-name { font-size: clamp(2.1rem, 12vw, 2.8rem); }
+    .exp-company { font-size: 1.05rem; }
+    .exp-bullets li { font-size: 0.82rem; }
+    .btn-primary, .btn-secondary {
+      padding: 0.78rem 1rem;
+      font-size: 0.84rem;
+    }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -781,10 +882,10 @@
 </section>
 
 
-<section id="projects" style="background: var(--navy2); padding: 6rem 4rem;">
+<section id="projects">
   <div class="section-tag">Selected Projects</div>
   <h2 class="section-title">Things I've<br>shipped.</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+  <div class="projects-grid">
     <div class="exp-card reveal" style="margin-bottom:0;">
       <div style="font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--cyan); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem;">Flutter · Firebase · Web Dashboard</div>
       <div class="exp-company" style="font-size:1.1rem; margin-bottom:0.5rem;">Parishoners</div>
